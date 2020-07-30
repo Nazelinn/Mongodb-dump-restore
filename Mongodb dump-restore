@@ -1,0 +1,7 @@
+[root@nazelin-test-03 ~]# mongodump --host  nazelin-test-03.Development.com --port 27017  --db Northwind --collection categories  --username mng --password 'mng123' --authenticationDatabase admin  --gzip --out /tmp/backup/Northwind-categories
+2020-07-30T19:49:56.455+0300    writing Northwind.categories to
+2020-07-30T19:49:56.461+0300    done dumping Northwind.categories (8 documents)   
+[root@nazelin-test-03 Northwind]# mongorestore --gzip --host nazelin-test-03.Development.com  --port 27017 --db Northwind --collection categories --username mng --password 'mng123' --authenticationDatabase admin /tmp/backup/Northwind-categories/Northwind/categories.bson.gz
+2020-07-30T19:58:26.492+0300    checking for collection data in /tmp/backup/Northwind-categories/Northwind/categories.bson.gz
+2020-07-30T19:58:26.494+0300    restoring to existing collection Northwind.categories without dropping
+
